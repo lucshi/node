@@ -208,7 +208,7 @@ codec_choose_x86 (struct codec *codec)
 				#if HAVE_AVX512
 				if (max_level >= 7) {
 					__cpuid_count(7, 0, eax, ebx, ecx, edx);
-					if (ebx & bit_AVX512vl && ecx & bit_AVX512VBMI) {
+					if (ebx & bit_AVX512vl && ecx & bit_AVX512vbmi) {
 						codec->enc = base64_stream_encode_avx512;
 						codec->dec = base64_stream_decode_avx512;
 						return true;
